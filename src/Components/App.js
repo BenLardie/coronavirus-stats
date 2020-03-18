@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { AllCases } from './AllCases';
+import AllCountries from './AllCountries';
 
 function App() {
   const [data, setData] = useState({})
@@ -15,19 +16,12 @@ function App() {
         setData(data)
       });
   }, [])
-  useEffect(() => {
-    fetch('https://coronavirus-19-api.herokuapp.com/countries ')
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setCountriesData(data)
-      });
-  }, [])
+
   console.log(countriesData)
   return (
     <>
       <AllCases data={data} />
+      <AllCountries />
     </>
   );
 }
