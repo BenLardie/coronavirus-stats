@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState({})
+  const [countriesData, setCountriesData] = useState([])
   useEffect(() => {
     fetch(' https://coronavirus-19-api.herokuapp.com/all')
       .then((response) => {
@@ -13,6 +14,16 @@ function App() {
         setData(data)
       });
   }, [])
+  useEffect(() => {
+    fetch('https://coronavirus-19-api.herokuapp.com/countries ')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCountriesData(data)
+      });
+  }, [])
+  console.log(countriesData)
   return (
     <>
     <h1>Cases</h1>
