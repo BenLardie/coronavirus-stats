@@ -29,10 +29,11 @@ export default function AllCountries() {
         </tr>
     </thead>
     <tbody>
-    {countriesData.map(countryObject => {
+    {countriesData.map((countryObject, index = 0) => {
                 const {country, cases, todayCases, deaths, todayDeaths, recovered, active, critical} = countryObject
+                index++
                 return (
-                <tr>
+                <tr key={index}>
                 <td>{country}{flag(country)}</td>
                 <td>{cases}</td>
                 <td>{todayCases}</td>
