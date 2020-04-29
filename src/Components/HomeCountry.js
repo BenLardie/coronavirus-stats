@@ -1,9 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }));
 
 export default function HomeCountry() {
 
     const [countryName, setCountryName] = useState(null)
     const [countryStats, setCountryStats]= useState(null)
+    const classes = useStyles();
     
     useEffect(()=> {
         fetch('http://ip-api.com/json')
@@ -25,9 +39,18 @@ export default function HomeCountry() {
         });
     },[countryName])
     console.log(countryStats)
+
+    const displayData = countryStats.map(countryData => {
+    const {country, cases,todayCases, active, casesPerOneMillion, critical, deathsPerOneMillion, recovered, testsPerOneMillion, deaths, todayDeaths, totalTests } = countryData
     return (
-        <div>
-            
-        </div>
+      <>
+        <h1>{{country}}</h1>
+      </>
+    )
+  })
+    return (
+      <Paper className={classes.paper}>
+
+      </Paper>
     )
 }
