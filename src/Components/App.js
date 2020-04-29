@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const [data, setData] = useState({})
+  const [countryName, setCountryName] = useState(null)
   const classes = useStyles();
 
   useEffect(() => {
@@ -32,13 +33,23 @@ function App() {
       });
   }, [])
 
+  useEffect(() => {
+    fetch('http://ip-api.com/json')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCountryName(data.country)
+      });
+  }, [])
+
   return (
     <div className={classes.root}>
       <Grid item xs={6}>
         <AllCases data={data} />
       </Grid>
       <Grid item xs={6}>
-        <HomeCountry />
+        <HomeCountry countryName={countryName} />
       </Grid>
       <Grid item xs={12}>
         <AllCountries />
