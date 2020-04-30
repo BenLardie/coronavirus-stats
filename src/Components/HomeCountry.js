@@ -38,6 +38,17 @@ export default function HomeCountry(props) {
   return (
     <Paper key={country} className={classes.paper}>
     <h1>{country}</h1>
+    <ul>
+    <h2>Cases</h2><h3>{cases}</h3>
+    <h2>Today Cases</h2><h3>{todayCases}</h3>
+    <h2>Active</h2><h3>{active}</h3>
+    <h2>Cases per 1 Million</h2><h3>{casesPerOneMillion}</h3>
+    <h2>Critical</h2><h3>{critical}</h3>
+    <h2>Recovered</h2><h3>{recovered}</h3>
+    <h2>Deaths</h2><h3>{deaths}</h3>
+    <h2>Deaths Today</h2><h3>{todayDeaths}</h3>
+    <h2>Total Test</h2><h3>{totalTests}</h3>
+    </ul>
     </Paper>
   )
 }
