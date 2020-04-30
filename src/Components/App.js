@@ -45,15 +45,17 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <Grid item xs={6}>
-        <AllCases data={data} />
-      </Grid>
-      <Grid item xs={6}>
-        {countryName.length > 0 && <HomeCountry countryName={countryName} />
-        }
-      </Grid>
-      <Grid item xs={12}>
-        <AllCountries />
+      <Grid container spacing={3}>
+        <Grid item xs={6}>
+          <AllCases data={data} />
+        </Grid>
+        <Grid item xs={6}>
+          {countryName.length > 0 && <HomeCountry countryName={countryName} />
+          }
+        </Grid>
+        <Grid item xs={12}>
+          <AllCountries />
+        </Grid>
       </Grid>
     </div>
   );
