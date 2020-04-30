@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const [data, setData] = useState({})
-  const [countryName, setCountryName] = useState(null)
+  const [countryName, setCountryName] = useState('')
   const classes = useStyles();
 
   useEffect(() => {
@@ -49,7 +49,8 @@ function App() {
         <AllCases data={data} />
       </Grid>
       <Grid item xs={6}>
-        <HomeCountry countryName={countryName} />
+        {countryName.length > 0 && <HomeCountry countryName={countryName} />
+        }
       </Grid>
       <Grid item xs={12}>
         <AllCountries />

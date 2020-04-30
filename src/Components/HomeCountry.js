@@ -30,19 +30,14 @@ export default function HomeCountry(props) {
   }, [props.countryName])
   console.log(countryStats)
 
-  const displayData = () =>  { 
-    if(countryStats) 
-{    countryStats.map(countryData => {
+
     const { country, cases, todayCases, active, casesPerOneMillion, critical, deathsPerOneMillion,
-      recovered, testsPerOneMillion, deaths, todayDeaths, totalTests } = countryData
-    return (
-        <h1>{{ country }}</h1>
-    )
-  })}
-  }
+      recovered, testsPerOneMillion, deaths, todayDeaths, totalTests } = countryStats
+      console.log(country)
+
   return (
-    <Paper className={classes.paper}>
-    { countryStats && displayData()}
+    <Paper key={country} className={classes.paper}>
+    <h1>{country}</h1>
     </Paper>
   )
 }
