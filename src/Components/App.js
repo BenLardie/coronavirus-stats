@@ -5,6 +5,8 @@ import AllCountries from './AllCountries';
 import HomeCountry from './HomeCountry'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+  },
+  title: {
+    flexGrow: 1,
   },
 }));
 
@@ -45,6 +50,11 @@ function App() {
 
   return (
     <div className={classes.root}>
+      <AppBar position="static">
+      <Typography variant="h1" className={classes.title}>
+            COVID-19 Stats
+      </Typography>
+      </AppBar>
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <AllCases data={data} />

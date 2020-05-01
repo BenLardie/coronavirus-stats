@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import './homeCountry.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,7 @@ export default function HomeCountry(props) {
     let response = await fetch(url);
     let data = await response.json()
     return setCountryStats(data);
-}
+  }
 
   useEffect(() => {
     getHome(`https://coronavirus-19-api.herokuapp.com/countries/${props.countryName}`)
@@ -31,24 +32,40 @@ export default function HomeCountry(props) {
   console.log(countryStats)
 
 
-    const { country, cases, todayCases, active, casesPerOneMillion, critical, deathsPerOneMillion,
-      recovered, testsPerOneMillion, deaths, todayDeaths, totalTests } = countryStats
-      console.log(country)
+  const { country, cases, todayCases, active, casesPerOneMillion, critical, deathsPerOneMillion,
+    recovered, testsPerOneMillion, deaths, todayDeaths, totalTests } = countryStats
+  console.log(country)
 
   return (
     <Paper key={country} className={classes.paper}>
-    <h1>{country}</h1>
-    <ul>
-    <h2>Cases</h2><h3>{cases}</h3>
-    <h2>Today Cases</h2><h3>{todayCases}</h3>
-    <h2>Active</h2><h3>{active}</h3>
-    <h2>Cases per 1 Million</h2><h3>{casesPerOneMillion}</h3>
-    <h2>Critical</h2><h3>{critical}</h3>
-    <h2>Recovered</h2><h3>{recovered}</h3>
-    <h2>Deaths</h2><h3>{deaths}</h3>
-    <h2>Deaths Today</h2><h3>{todayDeaths}</h3>
-    <h2>Total Test</h2><h3>{totalTests}</h3>
-    </ul>
+      <h1>{country}</h1>
+      <div className={'data-group'}>
+        <h2>Cases</h2><p>{cases}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Today Cases</h2><p>{todayCases}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Active</h2><p>{active}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Cases per 1 Million</h2><p>{casesPerOneMillion}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Critical</h2><p>{critical}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Recovered</h2><p>{recovered}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Deaths</h2><p>{deaths}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Deaths Today</h2><p>{todayDeaths}</p>
+      </div>
+      <div className={'data-group'}>
+        <h2>Total Test</h2><p>{totalTests}</p>
+      </div>
     </Paper>
   )
 }

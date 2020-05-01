@@ -41,7 +41,7 @@ export default function AllCountries() {
         { id: 'cases', label: 'Cases', maxWidth: 170 },
         { id: 'casesToday', label: 'Cases Today', maxWidth: 170 },
         { id: 'deaths', label: 'Deaths', maxWidth: 170 },
-        { id: 'deaths', label: 'Deaths Today', maxWidth: 170 },
+        { id: 'deathsToday', label: 'Deaths Today', maxWidth: 170 },
         { id: 'recovered', label: 'Recovered', maxWidth: 170 },
         { id: 'active', label: 'Active', maxWidth: 170 },
         { id: 'critical', label: 'Critical', maxWidth: 170 },
@@ -69,7 +69,7 @@ export default function AllCountries() {
                             const { country, cases, todayCases, deaths, todayDeaths, recovered, active, critical } = countryObject
                             index++
                             return (
-                                <TableRow hover role="checkbox" tabIndex={-1} key={country}>
+                                <TableRow hover role="checkbox" tabIndex={-1} key={index}>
                                     <TableCell style={{ maxWidth: 170 }}>{country}{flag(country)}</TableCell>
                                     <TableCell style={{ maxWidth: 170 }}>{cases}</TableCell>
                                     <TableCell style={{ maxWidth: 170 }}>{todayCases}</TableCell>
