@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
 export default function DataCard(props) {
     const classes = useStyles();
     return (
-        <Card>
-            <Typography variant="h4" className={classes.dataTitle}>{props.title}</Typography>
-            <Typography variant="p" className={classes.stat}>{props.data}</Typography>
+        <Card className={classes.dataGroup}>
+            <Typography variant="h5" className={classes.dataTitle}>{props.title}</Typography>
+            <Typography variant="body2" color="textSecondary" className={classes.stat}>{props.data}</Typography>
         </Card>
     )
 }
