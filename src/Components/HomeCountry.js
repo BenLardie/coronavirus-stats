@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import './homeCountry.css';
+import Typography from '@material-ui/core/Typography';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +14,19 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  dataGroup: {
+    display: 'inline-block',
+    paddingBottom: '10px',t
+  },
+  dataTitle: {
+    display: 'inline-block',
+    padding: '0 10px',
+    margin: '0',
+  },
+  stat: {
+    display: 'block',
+    margin:'0',
+  }
 }));
 
 export default function HomeCountry(props) {
@@ -39,32 +54,32 @@ export default function HomeCountry(props) {
   return (
     <Paper key={country} className={classes.paper}>
       <h1>{country}</h1>
-      <div className={'data-group'}>
-        <h2>Cases</h2><p>{cases}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Cases</Typography><p>{cases}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Today Cases</h2><p>{todayCases}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Today Cases</Typography><p>{todayCases}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Active</h2><p>{active}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Active</Typography><p>{active}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Cases per 1 Million</h2><p>{casesPerOneMillion}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Cases per 1 Million</Typography><p>{casesPerOneMillion}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Critical</h2><p>{critical}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Critical</Typography><p>{critical}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Recovered</h2><p>{recovered}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Recovered</Typography><p>{recovered}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Deaths</h2><p>{deaths}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Deaths</Typography><p>{deaths}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Deaths Today</h2><p>{todayDeaths}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Deaths Today</Typography><p>{todayDeaths}</p>
       </div>
-      <div className={'data-group'}>
-        <h2>Total Test</h2><p>{totalTests}</p>
+      <div className={classes.dataGroup}>
+        <Typography variant="h4" className={classes.dataTitle}>Total Test</Typography><p>{totalTests}</p>
       </div>
     </Paper>
   )

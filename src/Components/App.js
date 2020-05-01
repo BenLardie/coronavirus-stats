@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
+import Scroll from './Scroll'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,11 +51,13 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-      <Typography variant="h1" className={classes.title}>
-            COVID-19 Stats
-      </Typography>
-      </AppBar>
+      <Scroll>
+        <AppBar position="static">
+        <Typography variant="h1" className={classes.title}>
+              COVID-19 Stats
+        </Typography>
+        </AppBar>
+      </Scroll>
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <AllCases data={data} />

@@ -16,11 +16,10 @@ export default function AllCountries() {
     const useStyles = makeStyles({
         root: {
             width: '90%',
-            
+            margin: '0 auto',
         },
         container: {
             maxHeight: 440,
-            margin: '0, auto',
         },
     });
 
