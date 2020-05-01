@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 export const AllCases = (props) => {
     const classes = useStyles();
     return (
-        <Paper className={classes.paper}>
+        <Paper  elevation={3} className={classes.paper}>
             <h1>Cases</h1>
             <h2>{props.data.cases}</h2>
             <h1>Deaths</h1>

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   dataGroup: {
     display: 'inline-block',
-    paddingBottom: '10px',t
+    paddingBottom: '10px',
   },
   dataTitle: {
     display: 'inline-block',
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   stat: {
     display: 'block',
-    margin:'0',
+    margin: '0',
   }
 }));
 
@@ -46,13 +46,16 @@ export default function HomeCountry(props) {
   }, [props.countryName])
   console.log(countryStats)
 
-
   const { country, cases, todayCases, active, casesPerOneMillion, critical, deathsPerOneMillion,
     recovered, testsPerOneMillion, deaths, todayDeaths, totalTests } = countryStats
+
+  const dataCards = [{ data: country, title: 'Country' }, { data: cases, title: 'Cases' }, { data: todayCases, title: 'Cases Today' }, { data: active, title: 'Active' },
+  { data: casesPerOneMillion, title: 'Cases Per 1M' }, { data: critical, title: 'Critical' }, { data: deathsPerOneMillion, title: 'Deaths' },
+  { data: recovered, title: 'Recovered' }, { data: testsPerOneMillion, title: 'Test Per 1M' }, { data: deaths, title: 'Deaths' }, { data: todayDeaths, title: 'Deaths Today' }, { data: totalTests, title: 'Total Test' }]
   console.log(country)
 
   return (
-    <Paper key={country} className={classes.paper}>
+    <Paper elevation={3} key={country} className={classes.paper}>
       <h1>{country}</h1>
       <div className={classes.dataGroup}>
         <Typography variant="h4" className={classes.dataTitle}>Cases</Typography><p>{cases}</p>
