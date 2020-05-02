@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     dataGroup: {
       display: 'inline-block',
-      paddingBottom: '10px',
+      padding: theme.spacing(2),
+      margin: theme.spacing(2),
     },
     dataTitle: {
       display: 'inline-block',
