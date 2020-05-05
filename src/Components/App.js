@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Scroll from './Scroll'
+import News from './News';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,6 +62,7 @@ function App() {
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <AllCases data={data} />
+          <News />
         </Grid>
         <Grid item xs={6}>
           {countryName.length > 0 && <HomeCountry countryName={countryName} />
