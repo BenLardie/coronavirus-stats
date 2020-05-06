@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function News() {
     const key =process.env.REACT_APP_API_KEY
@@ -8,7 +8,9 @@ export default function News() {
     let yyyy = today.getFullYear();
     today = yyyy + '/' + mm + '/' + dd;
 
-    const url = `https://newsapi.org/v2/everything?q=COVID&from=${today}&sortBy=publishedAt&apiKey=${key}`
+    const url = `https://newsapi.org/v2/everything?q=COVID&from=${today}&sortBy=publishedAt?language=en&apiKey=${key}`
+
+    const [articles, setArticles] = useState([])
 
     useEffect(() => {
         fetch(url)
@@ -16,9 +18,11 @@ export default function News() {
           return response.json();
         })
         .then((data) => {
-          console.log(data)
+          setArticles(data.articles)
         });
-    })
+    },[])
+
+    console.log(articles[0])
     return (
         <div>
             
