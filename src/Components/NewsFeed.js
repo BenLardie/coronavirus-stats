@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import NewsCard from './NewsCard'
 
-export default function News() {
+export default function NewsFeed() {
     const key =process.env.REACT_APP_API_KEY
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -21,11 +27,14 @@ export default function News() {
           setArticles(data.articles)
         });
     },[])
-
     console.log(articles[0])
     return (
-        <div>
-            
-        </div>
+        <Paper>
+            {articles.map(article => {
+                return (
+                    <NewsCard article={article} />
+                )
+            })}
+        </Paper>
     )
 }

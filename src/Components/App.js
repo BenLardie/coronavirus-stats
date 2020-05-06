@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Scroll from './Scroll'
-import News from './News';
+import News from './NewsFeed';
 
 const useStyles = makeStyles((theme) => ({
   root: {
