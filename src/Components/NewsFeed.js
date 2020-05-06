@@ -13,8 +13,9 @@ export default function NewsFeed() {
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
     today = yyyy + '/' + mm + '/' + dd;
+    let page = 1
 
-    const url = `https://newsapi.org/v2/everything?q=COVID&from=${today}&sortBy=publishedAt?language=en&apiKey=${key}`
+    const url = `https://newsapi.org/v2/everything?q=COVID&from=${today}&sortBy=publishedAt?language=en&apiKey=${key}&page=${page}`
 
     const [articles, setArticles] = useState([])
 

@@ -62,6 +62,8 @@ function App() {
       <Grid container spacing={3}>
         <Grid item xs={6}>
           <AllCases data={data} />
+        </Grid>
+        <Grid item xs={6}>
           <News />
         </Grid>
         <Grid item xs={6}>
