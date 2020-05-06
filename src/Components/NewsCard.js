@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     media: {
-        height: 140,
+        height:'100%',
     },
 }));
 
@@ -35,6 +35,7 @@ export default function NewsCard(props) {
     const { author, content, description, publishedAt, source, title, url, urlToImage } = props.article
 
     const preventDefault = (event) => event.preventDefault();
+
 
     return (
         <Card className={classes.root}>

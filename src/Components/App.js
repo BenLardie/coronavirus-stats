@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import { AllCases } from './AllCases';
 import AllCountries from './AllCountries';
 import HomeCountry from './HomeCountry'
@@ -15,13 +14,18 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
+    margin: theme.spacing(2),
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   title: {
     flexGrow: 1,
+    zIndex: 2,
   },
+  grid: {
+    marginTop: '100px'
+  }
 }));
 
 function App() {
@@ -53,13 +57,13 @@ function App() {
   return (
     <div className={classes.root}>
       <Scroll>
-        <AppBar position="static">
+        <AppBar position="fixed">
         <Typography variant="h1" className={classes.title}>
               COVID-19 Stats
         </Typography>
         </AppBar>
       </Scroll>
-      <Grid container spacing={3}>
+      <Grid className={classes.grid} container spacing={0}>
         <Grid item xs={6}>
           <AllCases data={data} />
         </Grid>

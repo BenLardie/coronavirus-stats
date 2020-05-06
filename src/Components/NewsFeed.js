@@ -33,7 +33,9 @@ export default function NewsFeed() {
         <Paper>
             {articles.map(article => {
                 return (
-                    <NewsCard article={article} />
+                    <React.Suspense fallback='Loading views...'>
+                        <NewsCard article={article} />
+                    </React.Suspense>
                 )
             })}
         </Paper>
